@@ -13,49 +13,11 @@ type ExtensionPreferences = {
   /** OpenRouter API Key - Your OpenRouter API key for alternative models */
   "openrouterApiKey"?: string,
   /** Default Model - Default AI model to use */
-  "defaultModel": "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  "defaultModel": "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
   /** Temperature - AI response randomness (0.0 to 1.0) */
   "temperature": string,
   /** Max Tokens - Maximum response length */
-  "maxTokens": string,
-  /** Custom System Prompt - Override the default system prompt for all operations */
-  "customSystemPrompt"?: unknown,
-  /** Rewrite Prompt - Custom prompt for text rewriting (use {text} as placeholder) */
-  "rewritePrompt"?: unknown,
-  /** Workplace Prompt - Custom prompt for workplace rewriting (use {text} as placeholder) */
-  "workplacePrompt"?: unknown,
-  /** Summarize Prompt - Custom prompt for summarization (use {text} as placeholder) */
-  "summarizePrompt"?: unknown,
-  /** Bullets Prompt - Custom prompt for bullet points (use {text} as placeholder) */
-  "bulletsPrompt"?: unknown,
-  /** Rewrite Command Model - Model for Rewrite command (uses default if empty) */
-  "rewriteModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Workplace Command Model - Model for Workplace command (uses default if empty) */
-  "workplaceModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Summarize Command Model - Model for Summarize command (uses default if empty) */
-  "summarizeModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Bullets Command Model - Model for Bullets command (uses default if empty) */
-  "bulletsModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Translate Commands Model - Model for all Translate commands (uses default if empty) */
-  "translateModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Shorten Command Model - Model for Shorten command (uses default if empty) */
-  "shortenModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Humor Command Model - Model for Humor command (uses default if empty) */
-  "humorModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Questions Command Model - Model for Questions command (uses default if empty) */
-  "questionsModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Improve Command Model - Model for Improve command (uses default if empty) */
-  "improveModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Expand Command Model - Model for Expand command (uses default if empty) */
-  "expandModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Title Command Model - Model for Title command (uses default if empty) */
-  "titleModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Key Points Command Model - Model for Key Points command (uses default if empty) */
-  "keypointsModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Positive Reply Command Model - Model for Positive Reply command (uses default if empty) */
-  "positiveModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Negative Reply Command Model - Model for Negative Reply command (uses default if empty) */
-  "negativeModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash"
+  "maxTokens": string
 }
 
 /** Preferences accessible in all the extension's commands */
