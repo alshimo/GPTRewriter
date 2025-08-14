@@ -278,9 +278,20 @@ async function sendOpenRouterRequest(
 
 async function transcribeAudioWithWhisper(audioBlob: Blob, apiKey: string): Promise<string | null> {
   try {
+    // Convert WebM to a format that Whisper can handle
+    let processedBlob = audioBlob;
+    
+    // If it's WebM, we need to convert it to MP3 or WAV
+    if (audioBlob.type === "audio/webm") {
+      // For now, we'll try to send it as WebM and let Whisper handle it
+      // Whisper supports WebM format
+      processedBlob = audioBlob;
+    }
+
     const formData = new FormData();
-    formData.append("file", audioBlob, "audio.wav");
+    formData.append("file", processedBlob, "audio.webm");
     formData.append("model", "whisper-1");
+    formData.append("response_format", "text");
 
     const response = await fetch("https://api.openai.com/v1/audio/transcriptions", {
       method: "POST",
@@ -291,6 +302,8 @@ async function transcribeAudioWithWhisper(audioBlob: Blob, apiKey: string): Prom
     });
 
     if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Whisper API error response:", errorText);
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
 

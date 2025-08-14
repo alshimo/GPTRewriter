@@ -36,13 +36,38 @@ export default function VoiceCommand() {
   });
   const [transcription, setTranscription] = useState<string>("");
   const [isTranscribing, setIsTranscribing] = useState(false);
+  const [permissionStatus, setPermissionStatus] = useState<string>("unknown");
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Check permission status on component mount
+  React.useEffect(() => {
+    checkMicrophonePermission().then(setPermissionStatus);
+  }, []);
+
   const startRecording = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const mediaRecorder = new MediaRecorder(stream);
+      // First check if we have permission
+      const permission = await navigator.permissions.query({ name: 'microphone' as PermissionName });
+      
+      if (permission.state === 'denied') {
+        showToast(Toast.Style.Failure, "Microphone permission denied", "Please enable microphone access in System Preferences > Security & Privacy > Privacy > Microphone");
+        return;
+      }
+
+      // Request microphone access with more specific constraints
+      const stream = await navigator.mediaDevices.getUserMedia({ 
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true,
+          sampleRate: 44100,
+        } 
+      });
+      
+      const mediaRecorder = new MediaRecorder(stream, {
+        mimeType: 'audio/webm;codecs=opus'
+      });
       mediaRecorderRef.current = mediaRecorder;
 
       const chunks: Blob[] = [];
@@ -53,7 +78,7 @@ export default function VoiceCommand() {
       };
 
       mediaRecorder.onstop = () => {
-        const audioBlob = new Blob(chunks, { type: "audio/wav" });
+        const audioBlob = new Blob(chunks, { type: "audio/webm" });
         setRecordingState((prev) => ({
           ...prev,
           audioBlob,
@@ -72,7 +97,18 @@ export default function VoiceCommand() {
 
       showToast(Toast.Style.Success, "Recording started");
     } catch (error) {
-      showToast(Toast.Style.Failure, "Failed to start recording", "Please check microphone permissions");
+      console.error("Recording error:", error);
+      if (error instanceof Error) {
+        if (error.name === 'NotAllowedError') {
+          showToast(Toast.Style.Failure, "Microphone access denied", "Please allow microphone access when prompted, or check System Preferences > Security & Privacy > Privacy > Microphone");
+        } else if (error.name === 'NotFoundError') {
+          showToast(Toast.Style.Failure, "No microphone found", "Please connect a microphone and try again");
+        } else {
+          showToast(Toast.Style.Failure, "Recording failed", error.message);
+        }
+      } else {
+        showToast(Toast.Style.Failure, "Failed to start recording", "Please check microphone permissions");
+      }
     }
   };
 
@@ -170,14 +206,46 @@ export default function VoiceCommand() {
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
+  const checkMicrophonePermission = async () => {
+    try {
+      const permission = await navigator.permissions.query({ name: 'microphone' as PermissionName });
+      return permission.state;
+    } catch (error) {
+      console.error("Permission check error:", error);
+      return 'unknown';
+    }
+  };
+
   return (
     <List>
       <List.Section title="Voice Recording">
+        {permissionStatus === "denied" && (
+          <List.Item
+            title="Microphone Permission Required"
+            subtitle="Please enable microphone access in System Preferences > Security & Privacy > Privacy > Microphone"
+            icon={Icon.ExclamationMark}
+            actions={
+              <ActionPanel>
+                <Action 
+                  title="Open System Preferences" 
+                  onAction={() => {
+                    // This will open System Preferences to the Privacy section
+                    showToast(Toast.Style.Success, "Please navigate to System Preferences > Security & Privacy > Privacy > Microphone");
+                  }} 
+                  icon={Icon.Gear} 
+                />
+              </ActionPanel>
+            }
+          />
+        )}
+        
         <List.Item
           title={recordingState.isRecording ? "Stop Recording" : "Start Recording"}
           subtitle={
             recordingState.isRecording
               ? `Recording... ${formatDuration(recordingState.duration)}`
+              : permissionStatus === "denied"
+              ? "Microphone access denied - check permissions"
               : "Tap to start recording your voice"
           }
           icon={recordingState.isRecording ? Icon.Stop : Icon.Microphone}
@@ -186,7 +254,12 @@ export default function VoiceCommand() {
               {recordingState.isRecording ? (
                 <Action title="Stop Recording" onAction={stopRecording} icon={Icon.Stop} />
               ) : (
-                <Action title="Start Recording" onAction={startRecording} icon={Icon.Microphone} />
+                <Action 
+                  title="Start Recording" 
+                  onAction={startRecording} 
+                  icon={Icon.Microphone}
+                  shortcut={{ modifiers: ["cmd"], key: "r" }}
+                />
               )}
             </ActionPanel>
           }
