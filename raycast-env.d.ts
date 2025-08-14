@@ -27,7 +27,33 @@ type ExtensionPreferences = {
   /** Summarize Command Model - Model for Summarize command (uses default if empty) */
   "summarizeModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
   /** Bullets Command Model - Model for Bullets command (uses default if empty) */
-  "bulletsModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash"
+  "bulletsModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Shorten Command Model - Model for Shorten command (uses default if empty) */
+  "shortenModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Humor Command Model - Model for Humor command (uses default if empty) */
+  "humorModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Questions Command Model - Model for Questions command (uses default if empty) */
+  "questionsModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Improve Command Model - Model for Improve command (uses default if empty) */
+  "improveModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Expand Command Model - Model for Expand command (uses default if empty) */
+  "expandModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Title Command Model - Model for Title command (uses default if empty) */
+  "titleModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Key Points Command Model - Model for Key Points command (uses default if empty) */
+  "keypointsModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Positive Command Model - Model for Positive command (uses default if empty) */
+  "positiveModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Negative Command Model - Model for Negative command (uses default if empty) */
+  "negativeModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Translate to English Model - Model for Translate to English command (uses default if empty) */
+  "translateEnModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Translate to Turkish Model - Model for Translate to Turkish command (uses default if empty) */
+  "translateTrModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Translate to Persian Model - Model for Translate to Persian command (uses default if empty) */
+  "translateFaModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Translate to Spanish Model - Model for Translate to Spanish command (uses default if empty) */
+  "translateEsModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash"
 }
 
 /** Preferences accessible in all the extension's commands */
