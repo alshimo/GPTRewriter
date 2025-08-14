@@ -12,6 +12,7 @@ export interface ProcessTextOptions {
   customPrompt?: string;
   commandName?: string;
   preferences?: any;
+  audioData?: Blob;
 }
 
 export interface PromptTemplate {
@@ -106,6 +107,10 @@ const PROMPT_TEMPLATES: Record<string, PromptTemplate> = {
     system: DEFAULT_SYSTEM_PROMPT,
     user: "{text}",
   },
+  transcribeAudio: {
+    system: "You are a professional audio transcription service. Transcribe the provided audio content accurately, maintaining proper punctuation, grammar, and formatting. If the audio is unclear or contains background noise, do your best to transcribe what you can hear.",
+    user: "Please transcribe the following audio content: {text}",
+  },
 };
 
 export async function processText(
@@ -123,6 +128,7 @@ export async function processText(
     customPrompt,
     commandName,
     preferences,
+    audioData,
   } = options;
 
   const template = PROMPT_TEMPLATES[action];
@@ -146,6 +152,11 @@ export async function processText(
     if (preferences[commandPromptKey] && preferences[commandPromptKey].trim()) {
       finalCustomPrompt = preferences[commandPromptKey];
     }
+  }
+
+  // Special handling for audio transcription
+  if (action === "transcribeAudio" && audioData) {
+    return await transcribeAudioWithWhisper(audioData, openaiApiKey);
   }
 
   const systemPrompt = customSystemPrompt || template.system;
@@ -261,6 +272,34 @@ async function sendOpenRouterRequest(
     console.error("OpenRouter API error:", error);
     throw new Error(
       `OpenRouter API error: ${error instanceof Error ? error.message : "Unknown error"}`,
+    );
+  }
+}
+
+async function transcribeAudioWithWhisper(audioBlob: Blob, apiKey: string): Promise<string | null> {
+  try {
+    const formData = new FormData();
+    formData.append("file", audioBlob, "audio.wav");
+    formData.append("model", "whisper-1");
+
+    const response = await fetch("https://api.openai.com/v1/audio/transcriptions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.text || null;
+  } catch (error) {
+    console.error("Whisper API error:", error);
+    throw new Error(
+      `Whisper API error: ${error instanceof Error ? error.message : "Unknown error"}`,
     );
   }
 }

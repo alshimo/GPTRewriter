@@ -53,7 +53,9 @@ type ExtensionPreferences = {
   /** Translate to Persian Model - Model for Translate to Persian command (uses default if empty) */
   "translateFaModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
   /** Translate to Spanish Model - Model for Translate to Spanish command (uses default if empty) */
-  "translateEsModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash"
+  "translateEsModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Voice to Text Model - Model for Voice to Text command (uses default if empty) */
+  "voiceModel"?: "" | "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash"
 }
 
 /** Preferences accessible in all the extension's commands */
@@ -98,6 +100,8 @@ declare namespace Preferences {
   export type Custom = ExtensionPreferences & {}
   /** Preferences accessible in the `settings` command */
   export type Settings = ExtensionPreferences & {}
+  /** Preferences accessible in the `voice` command */
+  export type Voice = ExtensionPreferences & {}
 }
 
 declare namespace Arguments {
@@ -139,5 +143,7 @@ declare namespace Arguments {
   export type Custom = {}
   /** Arguments passed to the `settings` command */
   export type Settings = {}
+  /** Arguments passed to the `voice` command */
+  export type Voice = {}
 }
 
