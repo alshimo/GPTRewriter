@@ -252,6 +252,10 @@
       "description": "Model for Rewrite command (uses default if empty)",
       "data": [
         {
+          "title": "Use Default",
+          "value": ""
+        },
+        {
           "title": "GPT-5",
           "value": "gpt-5"
         },
@@ -312,6 +316,10 @@
       "title": "Workplace Command Model",
       "description": "Model for Workplace command (uses default if empty)",
       "data": [
+        {
+          "title": "Use Default",
+          "value": ""
+        },
         {
           "title": "GPT-5",
           "value": "gpt-5"
@@ -374,6 +382,10 @@
       "description": "Model for Summarize command (uses default if empty)",
       "data": [
         {
+          "title": "Use Default",
+          "value": ""
+        },
+        {
           "title": "GPT-5",
           "value": "gpt-5"
         },
@@ -434,6 +446,10 @@
       "title": "Bullets Command Model",
       "description": "Model for Bullets command (uses default if empty)",
       "data": [
+        {
+          "title": "Use Default",
+          "value": ""
+        },
         {
           "title": "GPT-5",
           "value": "gpt-5"
@@ -496,6 +512,10 @@
       "description": "Model for Shorten command (uses default if empty)",
       "data": [
         {
+          "title": "Use Default",
+          "value": ""
+        },
+        {
           "title": "GPT-5",
           "value": "gpt-5"
         },
@@ -556,6 +576,10 @@
       "title": "Humor Command Model",
       "description": "Model for Humor command (uses default if empty)",
       "data": [
+        {
+          "title": "Use Default",
+          "value": ""
+        },
         {
           "title": "GPT-5",
           "value": "gpt-5"
@@ -618,6 +642,10 @@
       "description": "Model for Questions command (uses default if empty)",
       "data": [
         {
+          "title": "Use Default",
+          "value": ""
+        },
+        {
           "title": "GPT-5",
           "value": "gpt-5"
         },
@@ -678,6 +706,10 @@
       "title": "Improve Command Model",
       "description": "Model for Improve command (uses default if empty)",
       "data": [
+        {
+          "title": "Use Default",
+          "value": ""
+        },
         {
           "title": "GPT-5",
           "value": "gpt-5"
@@ -740,6 +772,10 @@
       "description": "Model for Expand command (uses default if empty)",
       "data": [
         {
+          "title": "Use Default",
+          "value": ""
+        },
+        {
           "title": "GPT-5",
           "value": "gpt-5"
         },
@@ -800,6 +836,10 @@
       "title": "Title Command Model",
       "description": "Model for Title command (uses default if empty)",
       "data": [
+        {
+          "title": "Use Default",
+          "value": ""
+        },
         {
           "title": "GPT-5",
           "value": "gpt-5"
@@ -862,6 +902,10 @@
       "description": "Model for Key Points command (uses default if empty)",
       "data": [
         {
+          "title": "Use Default",
+          "value": ""
+        },
+        {
           "title": "GPT-5",
           "value": "gpt-5"
         },
@@ -922,6 +966,10 @@
       "title": "Positive Command Model",
       "description": "Model for Positive command (uses default if empty)",
       "data": [
+        {
+          "title": "Use Default",
+          "value": ""
+        },
         {
           "title": "GPT-5",
           "value": "gpt-5"
@@ -984,6 +1032,10 @@
       "description": "Model for Negative command (uses default if empty)",
       "data": [
         {
+          "title": "Use Default",
+          "value": ""
+        },
+        {
           "title": "GPT-5",
           "value": "gpt-5"
         },
@@ -1044,6 +1096,10 @@
       "title": "Translate to English Model",
       "description": "Model for Translate to English command (uses default if empty)",
       "data": [
+        {
+          "title": "Use Default",
+          "value": ""
+        },
         {
           "title": "GPT-5",
           "value": "gpt-5"
@@ -1106,6 +1162,10 @@
       "description": "Model for Translate to Turkish command (uses default if empty)",
       "data": [
         {
+          "title": "Use Default",
+          "value": ""
+        },
+        {
           "title": "GPT-5",
           "value": "gpt-5"
         },
@@ -1167,6 +1227,10 @@
       "description": "Model for Translate to Persian command (uses default if empty)",
       "data": [
         {
+          "title": "Use Default",
+          "value": ""
+        },
+        {
           "title": "GPT-5",
           "value": "gpt-5"
         },
@@ -1227,6 +1291,10 @@
       "title": "Translate to Spanish Model",
       "description": "Model for Translate to Spanish command (uses default if empty)",
       "data": [
+        {
+          "title": "Use Default",
+          "value": ""
+        },
         {
           "title": "GPT-5",
           "value": "gpt-5"
