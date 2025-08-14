@@ -1,9 +1,4 @@
-import {
-  getPreferenceValues,
-  showToast,
-  Toast,
-  Clipboard,
-} from "@raycast/api";
+import { getPreferenceValues, showToast, Toast, Clipboard } from "@raycast/api";
 import { processText } from "./lib/ai";
 import { getTextFromSelectionOrClipboard } from "./lib/utils";
 
@@ -25,7 +20,7 @@ export default async function RewriteCommand() {
   try {
     // Get text from selection or clipboard
     const textToProcess = await getTextFromSelectionOrClipboard();
-    
+
     if (!textToProcess) {
       return;
     }

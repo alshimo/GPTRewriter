@@ -179,7 +179,7 @@ export async function processText(
   } else {
     // For local testing without API keys, return a mock response
     console.log("No API key configured - returning mock response for testing");
-    return `[Mock Response] Processed text: "${text.substring(0, 50)}${text.length > 50 ? '...' : ''}"`;
+    return `[Mock Response] Processed text: "${text.substring(0, 50)}${text.length > 50 ? "..." : ""}"`;
   }
 }
 
