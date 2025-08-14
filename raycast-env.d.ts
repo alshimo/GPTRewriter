@@ -19,15 +19,7 @@ type ExtensionPreferences = {
   /** Max Tokens - Maximum response length */
   "maxTokens": string,
   /** Custom System Prompt - Override the default system prompt for all operations */
-  "customSystemPrompt"?: unknown,
-  /** Rewrite Command Model - Model for Rewrite command (uses default if empty) */
-  "rewriteModel"?: "" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Workplace Command Model - Model for Workplace command (uses default if empty) */
-  "workplaceModel"?: "" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Summarize Command Model - Model for Summarize command (uses default if empty) */
-  "summarizeModel"?: "" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
-  /** Bullets Command Model - Model for Bullets command (uses default if empty) */
-  "bulletsModel"?: "" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash"
+  "customSystemPrompt"?: unknown
 }
 
 /** Preferences accessible in all the extension's commands */
