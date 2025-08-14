@@ -13,13 +13,21 @@ type ExtensionPreferences = {
   /** OpenRouter API Key - Your OpenRouter API key for alternative models */
   "openrouterApiKey"?: string,
   /** Default Model - Default AI model to use */
-  "defaultModel": "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  "defaultModel": "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
   /** Temperature - AI response randomness (0.0 to 1.0) */
   "temperature": string,
   /** Max Tokens - Maximum response length */
   "maxTokens": string,
   /** Custom System Prompt - Override the default system prompt for all operations */
-  "customSystemPrompt"?: unknown
+  "customSystemPrompt"?: string,
+  /** Rewrite Command Model - Model for Rewrite command (uses default if empty) */
+  "rewriteModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Workplace Command Model - Model for Workplace command (uses default if empty) */
+  "workplaceModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Summarize Command Model - Model for Summarize command (uses default if empty) */
+  "summarizeModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash",
+  /** Bullets Command Model - Model for Bullets command (uses default if empty) */
+  "bulletsModel"?: "gpt-5" | "gpt-5-mini" | "gpt-4o-mini" | "gpt-4o" | "gpt-3.5-turbo" | "meta-llama/llama-3.3-70b-instruct:free" | "featherless/qwerky-72b:free" | "deepseek/deepseek-chat-v3-0324:free" | "z-ai/glm-4.5-air:free" | "x-ai/grok-4" | "x-ai/grok-3-mini" | "anthropic/claude-sonnet-4" | "google/gemini-2.5-flash"
 }
 
 /** Preferences accessible in all the extension's commands */
