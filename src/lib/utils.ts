@@ -5,7 +5,7 @@ export async function getTextFromSelectionOrClipboard(): Promise<
 > {
   // Get selected text first
   let textToProcess: string;
-  
+
   try {
     textToProcess = await getSelectedText();
   } catch (error) {
@@ -23,7 +23,10 @@ export async function getTextFromSelectionOrClipboard(): Promise<
 
       if (clipboardText) {
         textToProcess = clipboardText;
-        showToast(Toast.Style.Success, "No text selected - using clipboard content");
+        showToast(
+          Toast.Style.Success,
+          "No text selected - using clipboard content",
+        );
         return textToProcess;
       } else {
         showToast(

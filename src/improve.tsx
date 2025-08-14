@@ -1,9 +1,4 @@
-import {
-  getPreferenceValues,
-  showToast,
-  Toast,
-  Clipboard,
-} from "@raycast/api";
+import { getPreferenceValues, showToast, Toast, Clipboard } from "@raycast/api";
 import { processText } from "./lib/ai";
 import { getTextFromSelectionOrClipboard } from "./lib/utils";
 

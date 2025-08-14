@@ -108,7 +108,8 @@ const PROMPT_TEMPLATES: Record<string, PromptTemplate> = {
     user: "{text}",
   },
   transcribeAudio: {
-    system: "You are a professional audio transcription service. Transcribe the provided audio content accurately, maintaining proper punctuation, grammar, and formatting. If the audio is unclear or contains background noise, do your best to transcribe what you can hear.",
+    system:
+      "You are a professional audio transcription service. Transcribe the provided audio content accurately, maintaining proper punctuation, grammar, and formatting. If the audio is unclear or contains background noise, do your best to transcribe what you can hear.",
     user: "Please transcribe the following audio content: {text}",
   },
 };
@@ -276,11 +277,14 @@ async function sendOpenRouterRequest(
   }
 }
 
-async function transcribeAudioWithWhisper(audioBlob: Blob, apiKey: string): Promise<string | null> {
+async function transcribeAudioWithWhisper(
+  audioBlob: Blob,
+  apiKey: string,
+): Promise<string | null> {
   try {
     // Convert WebM to a format that Whisper can handle
     let processedBlob = audioBlob;
-    
+
     // If it's WebM, we need to convert it to MP3 or WAV
     if (audioBlob.type === "audio/webm") {
       // For now, we'll try to send it as WebM and let Whisper handle it
@@ -293,13 +297,16 @@ async function transcribeAudioWithWhisper(audioBlob: Blob, apiKey: string): Prom
     formData.append("model", "whisper-1");
     formData.append("response_format", "text");
 
-    const response = await fetch("https://api.openai.com/v1/audio/transcriptions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
+    const response = await fetch(
+      "https://api.openai.com/v1/audio/transcriptions",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: formData,
       },
-      body: formData,
-    });
+    );
 
     if (!response.ok) {
       const errorText = await response.text();

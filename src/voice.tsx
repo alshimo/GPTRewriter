@@ -27,7 +27,9 @@ export default function VoiceCommand() {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const openSystemPreferences = () => {
-    open("x-apple.systempreferences:com.apple.preference.security?Privacy_Microphone");
+    open(
+      "x-apple.systempreferences:com.apple.preference.security?Privacy_Microphone",
+    );
   };
 
   const openMicrophoneSettings = () => {
@@ -36,7 +38,11 @@ export default function VoiceCommand() {
   };
 
   const showRecordingInstructions = () => {
-    showToast(Toast.Style.Success, "Voice recording instructions", "Use macOS QuickTime or Voice Memos to record audio, then paste the file path here");
+    showToast(
+      Toast.Style.Success,
+      "Voice recording instructions",
+      "Use macOS QuickTime or Voice Memos to record audio, then paste the file path here",
+    );
   };
 
   const transcribeFromFile = async () => {
@@ -50,12 +56,16 @@ export default function VoiceCommand() {
 
     try {
       // For now, we'll show instructions on how to use external recording tools
-      showToast(Toast.Style.Success, "Voice-to-text feature", "Due to Raycast limitations, please use macOS built-in recording tools and paste the audio file path");
+      showToast(
+        Toast.Style.Success,
+        "Voice-to-text feature",
+        "Due to Raycast limitations, please use macOS built-in recording tools and paste the audio file path",
+      );
     } catch (error) {
       showToast(
         Toast.Style.Failure,
         "Error processing audio",
-        error instanceof Error ? error.message : "Unknown error"
+        error instanceof Error ? error.message : "Unknown error",
       );
     } finally {
       setIsProcessing(false);
@@ -71,9 +81,9 @@ export default function VoiceCommand() {
           icon={Icon.Info}
           actions={
             <ActionPanel>
-              <Action 
-                title="Show Instructions" 
-                onAction={showRecordingInstructions} 
+              <Action
+                title="Show Instructions"
+                onAction={showRecordingInstructions}
                 icon={Icon.Info}
                 shortcut={{ modifiers: ["cmd"], key: "i" }}
               />
@@ -87,9 +97,9 @@ export default function VoiceCommand() {
           icon={Icon.Gear}
           actions={
             <ActionPanel>
-              <Action 
-                title="Open System Preferences" 
-                onAction={openMicrophoneSettings} 
+              <Action
+                title="Open System Preferences"
+                onAction={openMicrophoneSettings}
                 icon={Icon.Gear}
                 shortcut={{ modifiers: ["cmd"], key: "p" }}
               />
@@ -103,9 +113,9 @@ export default function VoiceCommand() {
           icon={Icon.Video}
           actions={
             <ActionPanel>
-              <Action 
-                title="Open QuickTime" 
-                onAction={() => open("quicktime://")} 
+              <Action
+                title="Open Quicktime"
+                onAction={() => open("quicktime://")}
                 icon={Icon.Video}
                 shortcut={{ modifiers: ["cmd"], key: "q" }}
               />
@@ -119,9 +129,9 @@ export default function VoiceCommand() {
           icon={Icon.Microphone}
           actions={
             <ActionPanel>
-              <Action 
-                title="Open Voice Memos" 
-                onAction={() => open("voicememos://")} 
+              <Action
+                title="Open Voice Memos"
+                onAction={() => open("voicememos://")}
                 icon={Icon.Microphone}
                 shortcut={{ modifiers: ["cmd"], key: "v" }}
               />
@@ -135,9 +145,9 @@ export default function VoiceCommand() {
           icon={Icon.Document}
           actions={
             <ActionPanel>
-              <Action 
-                title="Process Audio File" 
-                onAction={transcribeFromFile} 
+              <Action
+                title="Process Audio File"
+                onAction={transcribeFromFile}
                 icon={Icon.Document}
                 shortcut={{ modifiers: ["cmd"], key: "t" }}
               />
@@ -152,7 +162,7 @@ export default function VoiceCommand() {
           subtitle="1. Record audio using QuickTime or Voice Memos 2. Save the file 3. Use the transcription command"
           icon={Icon.QuestionMark}
         />
-        
+
         <List.Item
           title="Supported Audio Formats"
           subtitle="MP3, WAV, M4A, WebM, and other common formats"
