@@ -53,6 +53,13 @@
       "icon": "translate-icon.png"
     },
     {
+      "name": "translate-en-casual",
+      "title": "Translate to Casual English",
+      "description": "Translate text to casual English",
+      "mode": "no-view",
+      "icon": "translate-icon.png"
+    },
+    {
       "name": "summarize",
       "title": "Summarize Text",
       "description": "Create concise summaries of text",
@@ -1297,6 +1304,71 @@
       "required": false,
       "title": "Translate to Spanish Model",
       "description": "Model for Translate to Spanish command (uses default if empty)",
+      "data": [
+        {
+          "title": "Use Default",
+          "value": ""
+        },
+        {
+          "title": "GPT-5",
+          "value": "gpt-5"
+        },
+        {
+          "title": "GPT-5 Mini",
+          "value": "gpt-5-mini"
+        },
+        {
+          "title": "GPT-4o Mini",
+          "value": "gpt-4o-mini"
+        },
+        {
+          "title": "GPT-4o",
+          "value": "gpt-4o"
+        },
+        {
+          "title": "GPT-3.5 Turbo",
+          "value": "gpt-3.5-turbo"
+        },
+        {
+          "title": "Llama 3.3 70b (Free)",
+          "value": "meta-llama/llama-3.3-70b-instruct:free"
+        },
+        {
+          "title": "qwerky-72b (Free)",
+          "value": "featherless/qwerky-72b:free"
+        },
+        {
+          "title": "DeepSeek Chat V3 (Free)",
+          "value": "deepseek/deepseek-chat-v3-0324:free"
+        },
+        {
+          "title": "GLM 4.5 Air (Free)",
+          "value": "z-ai/glm-4.5-air:free"
+        },
+        {
+          "title": "Grok 4",
+          "value": "x-ai/grok-4"
+        },
+        {
+          "title": "Grok 3 Mini",
+          "value": "x-ai/grok-3-mini"
+        },
+        {
+          "title": "Claude Sonnet 4",
+          "value": "anthropic/claude-sonnet-4"
+        },
+        {
+          "title": "Gemini 2.5 Flash",
+          "value": "google/gemini-2.5-flash"
+        }
+      ]
+    },
+    {
+      "name": "translateEnCasualModel",
+      "type": "dropdown",
+      "required": false,
+      "title": "Translate to Casual English Model",
+      "description": "Model for Translate to Casual English command (uses default if empty)",
       "data": [
         {
           "title": "Use Default",
