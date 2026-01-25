@@ -2,6 +2,28 @@
 
 This guide will help you install the GPT Rewriter Raycast extension on your Mac.
 
+## 🚀 Quick Install (One Command)
+
+The easiest way to install:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/alshimo/GPTRewriter/main/install.sh | bash
+```
+
+This automatically:
+- ✅ Clones the repository
+- ✅ Checks and installs Node.js (if needed)
+- ✅ Installs all dependencies
+- ✅ Sets everything up
+
+Then just import to Raycast (see "Import into Raycast" section below).
+
+---
+
+## Manual Installation
+
+If you prefer to install manually, follow the steps below.
+
 ## Prerequisites
 
 - **macOS** (Raycast is macOS-only)

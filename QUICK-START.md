@@ -2,6 +2,26 @@
 
 ## For Your Friend - Simple Installation Steps
 
+### 🚀 Super Easy One-Line Installation (Recommended)
+
+Just run this command:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/alshimo/GPTRewriter/main/install.sh | bash
+```
+
+This will:
+- ✅ Clone the repository
+- ✅ Check and install Node.js (if needed)
+- ✅ Install all dependencies
+- ✅ Set everything up automatically
+
+Then just import to Raycast (see Step 3 below).
+
+---
+
+### Manual Installation (Alternative)
+
 ### Step 1: Check Requirements
 ```bash
 ./check-requirements.sh
@@ -49,10 +69,18 @@ The setup script will try to install Node.js automatically if you have Homebrew.
 
 ### Step 3: Import to Raycast
 
+**If you used the one-line installer:**
+- The extension is installed at: `~/.raycast-extensions/GPTRewriter`
+- Navigate to that folder when importing
+
+**If you cloned manually:**
+- Navigate to the folder where you cloned the repository
+
+**Then:**
 1. Open Raycast (`Cmd+Space`)
 2. Type "Extensions" and select it
 3. Click "Import Extension"
-4. Select this folder
+4. Select the GPTRewriter folder
 
 ### Step 4: Configure API Keys
 

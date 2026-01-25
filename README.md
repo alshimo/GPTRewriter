@@ -2,13 +2,37 @@
 
 A powerful AI-powered text rewriting and transformation tool for Raycast, featuring customizable prompts and support for multiple AI providers.
 
-## 🚀 Quick Start
+## 🚀 Quick Install
 
-### Installation
+### One-Line Installation
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/alshimo/GPTRewriter/main/install.sh | bash
+```
+
+Or using npx (if you prefer):
+
+```bash
+npx -y @alshimo/gpt-rewriter-install
+```
+
+### Manual Installation
+
 1. **Clone this repository**
-2. **Run setup**: `./setup.sh`
-3. **Start development**: `npm run dev`
-4. **Import in Raycast**: Extensions → Import Extension → Select this folder
+   ```bash
+   git clone https://github.com/alshimo/GPTRewriter.git
+   cd GPTRewriter
+   ```
+
+2. **Check requirements** (optional): `./check-requirements.sh`
+
+3. **Run setup**: `./setup.sh` (will auto-install Node.js if needed via Homebrew)
+
+4. **Start development**: `npm run dev`
+
+5. **Import in Raycast**: Extensions → Import Extension → Select this folder
+
+**Note:** The setup script will automatically install Node.js 18+ if you have Homebrew installed. Otherwise, see [INSTALLATION.md](INSTALLATION.md) for manual installation instructions.
 
 ### Configuration
 1. **Open Settings** in the extension
@@ -72,6 +96,24 @@ See [EXTENSION_README.md](EXTENSION_README.md) for comprehensive documentation i
 - User guides
 - Troubleshooting
 - Contributing guidelines
+
+## 📦 Sharing This Extension
+
+Since this extension isn't available on the Raycast store, you can share it with friends using these methods:
+
+### Option 1: GitHub (Recommended)
+1. Share the repository URL: `https://github.com/alshimo/GPTRewriter`
+2. They can use the one-line installer:
+   ```bash
+   curl -fsSL https://raw.githubusercontent.com/alshimo/GPTRewriter/main/install.sh | bash
+   ```
+
+### Option 2: Direct File Sharing
+1. Create a ZIP file (exclude `node_modules` folder)
+2. Share via email, cloud storage, or messaging
+3. Your friend extracts and follows [INSTALLATION.md](INSTALLATION.md)
+
+**Important:** Make sure to exclude `node_modules` when sharing - it's large and will be regenerated with `npm install`.
 
 ## 📄 License
 
