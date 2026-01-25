@@ -2,37 +2,33 @@
 
 A powerful AI-powered text rewriting and transformation tool for Raycast, featuring customizable prompts and support for multiple AI providers.
 
-## 🚀 Quick Install
+## 🚀 Install in 30 Seconds
 
-### One-Line Installation
+**Copy and paste this command:**
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/alshimo/GPTRewriter/main/install.sh | bash
 ```
 
-Or using npx (if you prefer):
+Then:
+1. Open Raycast (`Cmd+Space`)
+2. Go to Extensions → Import Extension
+3. Navigate to `~/.raycast-extensions/GPTRewriter`
+4. Configure your API keys in Settings
 
-```bash
-npx -y @alshimo/gpt-rewriter-install
-```
+**That's it!** 🎉
 
 ### Manual Installation
 
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/alshimo/GPTRewriter.git
-   cd GPTRewriter
-   ```
+If you prefer to install manually:
 
-2. **Check requirements** (optional): `./check-requirements.sh`
+```bash
+git clone https://github.com/alshimo/GPTRewriter.git
+cd GPTRewriter
+./setup.sh
+```
 
-3. **Run setup**: `./setup.sh` (will auto-install Node.js if needed via Homebrew)
-
-4. **Start development**: `npm run dev`
-
-5. **Import in Raycast**: Extensions → Import Extension → Select this folder
-
-**Note:** The setup script will automatically install Node.js 18+ if you have Homebrew installed. Otherwise, see [INSTALLATION.md](INSTALLATION.md) for manual installation instructions.
+Then import the folder in Raycast. See [INSTALLATION.md](INSTALLATION.md) for detailed instructions.
 
 ### Configuration
 1. **Open Settings** in the extension
@@ -91,29 +87,10 @@ npm run publish
 
 ## 📖 Documentation
 
-See [EXTENSION_README.md](EXTENSION_README.md) for comprehensive documentation including:
-- Detailed feature descriptions
-- User guides
-- Troubleshooting
-- Contributing guidelines
+- **[INSTALLATION.md](INSTALLATION.md)** - Detailed installation guide
+- **[EXTENSION_README.md](EXTENSION_README.md)** - Complete feature documentation
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute
 
-## 📦 Sharing This Extension
-
-Since this extension isn't available on the Raycast store, you can share it with friends using these methods:
-
-### Option 1: GitHub (Recommended)
-1. Share the repository URL: `https://github.com/alshimo/GPTRewriter`
-2. They can use the one-line installer:
-   ```bash
-   curl -fsSL https://raw.githubusercontent.com/alshimo/GPTRewriter/main/install.sh | bash
-   ```
-
-### Option 2: Direct File Sharing
-1. Create a ZIP file (exclude `node_modules` folder)
-2. Share via email, cloud storage, or messaging
-3. Your friend extracts and follows [INSTALLATION.md](INSTALLATION.md)
-
-**Important:** Make sure to exclude `node_modules` when sharing - it's large and will be regenerated with `npm install`.
 
 ## 🤝 Contributing
 
