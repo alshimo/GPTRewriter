@@ -2,6 +2,29 @@
 
 This guide will help you configure your GitHub repository to be public while preventing direct merges from other users.
 
+## 🚀 Quick Setup (Automated)
+
+**Prefer command line?** Use the automated script:
+
+```bash
+./setup-github-repo.sh
+```
+
+This script will:
+- ✅ Make the repository public
+- ✅ Set up branch protection on `main`
+- ✅ Require pull requests before merging
+- ✅ Require 1 approval (only you can approve)
+- ✅ Block force pushes and deletions
+
+**Prerequisites:**
+- GitHub CLI installed (`brew install gh`)
+- Authenticated with GitHub (`gh auth login`)
+
+---
+
+## Manual Setup (Step-by-Step)
+
 ## Step 1: Make Repository Public
 
 1. Go to your repository: `https://github.com/alshimo/GPTRewriter`
