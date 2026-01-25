@@ -115,6 +115,19 @@ Since this extension isn't available on the Raycast store, you can share it with
 
 **Important:** Make sure to exclude `node_modules` when sharing - it's large and will be regenerated with `npm install`.
 
+## 🤝 Contributing
+
+Contributions are welcome! This repository uses a fork-based workflow.
+
+1. **Fork the repository**
+2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
+3. **Make your changes**
+4. **Commit your changes** (`git commit -m 'Add some amazing feature'`)
+5. **Push to your fork** (`git push origin feature/amazing-feature`)
+6. **Open a Pull Request**
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
 ## 📄 License
 
 MIT License
