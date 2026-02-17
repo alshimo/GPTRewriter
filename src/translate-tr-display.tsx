@@ -11,7 +11,7 @@ import {
   Detail,
 } from "@raycast/api";
 import { processText } from "./lib/ai";
-import { getTextFromSelectionOrClipboard } from "./lib/utils";
+import { getTextFromSelectionOrClipboard, stripQuotes } from "./lib/utils";
 
 interface Preferences {
   openaiApiKey: string;
@@ -61,17 +61,31 @@ export default function TranslateTrDisplayCommand() {
       });
 
       if (response) {
-        setTranslation(response);
+        // Ensure response is a string - handle both string and object responses
+        let translationText: string;
+        if (typeof response === 'string') {
+          translationText = response;
+        } else if (response && typeof response === 'object') {
+          // Try to extract content from object
+          translationText = (response as any).content || (response as any).text || JSON.stringify(response);
+        } else {
+          translationText = String(response);
+        }
+        // Strip quotes to ensure clean output for display
+        translationText = stripQuotes(translationText);
+        setTranslation(translationText);
         showToast(Toast.Style.Success, "Translation to Turkish completed");
       } else {
         showToast(Toast.Style.Failure, "Failed to translate text");
       }
     } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
       showToast(
         Toast.Style.Failure,
         "Error translating text",
-        error instanceof Error ? error.message : "Unknown error",
+        errorMessage,
       );
+      setTranslation(""); // Clear translation on error
     } finally {
       setIsProcessing(false);
     }

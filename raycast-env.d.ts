@@ -78,6 +78,16 @@ declare namespace Preferences {
   export type TranslateEs = ExtensionPreferences & {}
   /** Preferences accessible in the `translate-en-casual` command */
   export type TranslateEnCasual = ExtensionPreferences & {}
+  /** Preferences accessible in the `translate-en-display` command */
+  export type TranslateEnDisplay = ExtensionPreferences & {}
+  /** Preferences accessible in the `translate-tr-display` command */
+  export type TranslateTrDisplay = ExtensionPreferences & {}
+  /** Preferences accessible in the `translate-fa-display` command */
+  export type TranslateFaDisplay = ExtensionPreferences & {}
+  /** Preferences accessible in the `translate-es-display` command */
+  export type TranslateEsDisplay = ExtensionPreferences & {}
+  /** Preferences accessible in the `translate-en-casual-display` command */
+  export type TranslateEnCasualDisplay = ExtensionPreferences & {}
   /** Preferences accessible in the `summarize` command */
   export type Summarize = ExtensionPreferences & {}
   /** Preferences accessible in the `bullets` command */
@@ -123,6 +133,16 @@ declare namespace Arguments {
   export type TranslateEs = {}
   /** Arguments passed to the `translate-en-casual` command */
   export type TranslateEnCasual = {}
+  /** Arguments passed to the `translate-en-display` command */
+  export type TranslateEnDisplay = {}
+  /** Arguments passed to the `translate-tr-display` command */
+  export type TranslateTrDisplay = {}
+  /** Arguments passed to the `translate-fa-display` command */
+  export type TranslateFaDisplay = {}
+  /** Arguments passed to the `translate-es-display` command */
+  export type TranslateEsDisplay = {}
+  /** Arguments passed to the `translate-en-casual-display` command */
+  export type TranslateEnCasualDisplay = {}
   /** Arguments passed to the `summarize` command */
   export type Summarize = {}
   /** Arguments passed to the `bullets` command */

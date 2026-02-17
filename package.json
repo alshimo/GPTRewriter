@@ -60,6 +60,41 @@
       "icon": "translate-icon.png"
     },
     {
+      "name": "translate-en-display",
+      "title": "Translate to English Display",
+      "description": "Translate text to English and view result in interface",
+      "mode": "view",
+      "icon": "translate-icon.png"
+    },
+    {
+      "name": "translate-tr-display",
+      "title": "Translate to Turkish Display",
+      "description": "Translate text to Turkish and view result in interface",
+      "mode": "view",
+      "icon": "translate-icon.png"
+    },
+    {
+      "name": "translate-fa-display",
+      "title": "Translate to Persian Display",
+      "description": "Translate text to Persian and view result in interface",
+      "mode": "view",
+      "icon": "translate-icon.png"
+    },
+    {
+      "name": "translate-es-display",
+      "title": "Translate to Spanish Display",
+      "description": "Translate text to Spanish and view result in interface",
+      "mode": "view",
+      "icon": "translate-icon.png"
+    },
+    {
+      "name": "translate-en-casual-display",
+      "title": "Translate to Casual English Display",
+      "description": "Translate text to casual English and view result in interface",
+      "mode": "view",
+      "icon": "translate-icon.png"
+    },
+    {
       "name": "summarize",
       "title": "Summarize Text",
       "description": "Create concise summaries of text",

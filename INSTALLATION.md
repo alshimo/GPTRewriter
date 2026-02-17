@@ -2,27 +2,35 @@
 
 This guide will help you install the GPT Rewriter Raycast extension on your Mac.
 
-## 🚀 Quick Install (One Command)
+## 🚀 Quick Install
 
-The easiest way to install:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/alshimo/GPTRewriter.git
+   cd GPTRewriter
+   ```
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/alshimo/GPTRewriter/main/install.sh | bash
-```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+   Or use the setup script: `./setup.sh`
 
-This automatically:
-- ✅ Clones the repository
-- ✅ Checks and installs Node.js (if needed)
-- ✅ Installs all dependencies
-- ✅ Sets everything up
+3. **Start development mode:**
+   ```bash
+   npm run dev
+   ```
+   This automatically loads the extension in Raycast.
 
-Then just import to Raycast (see "Import into Raycast" section below).
+4. **Configure API keys in Settings**
+
+**Note:** Keep `npm run dev` running while using the extension.
 
 ---
 
-## Manual Installation
+## Detailed Installation Guide
 
-If you prefer to install manually, follow the steps below.
+Follow the steps below for detailed instructions.
 
 ## Prerequisites
 
@@ -74,12 +82,16 @@ This will tell you what's missing and how to install it.
    npm install
    ```
 
-3. **Import into Raycast:**
-   - Open Raycast (`Cmd+Space`)
-   - Type "Extensions" and select it
-   - Click "Import Extension"
-   - Navigate to and select the `GPTRewriter` folder
-   - The extension will be imported and ready to use
+3. **Start development mode:**
+   ```bash
+   npm run dev
+   ```
+   This will:
+   - Start the Raycast development server
+   - Automatically load the extension in Raycast
+   - Watch for changes and reload automatically
+   
+   **Important:** Keep this terminal window open while using the extension.
 
 4. **Configure API Keys:**
    - Open Raycast
@@ -113,12 +125,13 @@ This will tell you what's missing and how to install it.
    ./setup.sh
    ```
 
-3. **Import into Raycast:**
-   - Open Raycast (`Cmd+Space`)
-   - Type "Extensions" and select it
-   - Click "Import Extension"
-   - Navigate to and select the `GPTRewriter` folder
-   - The extension will be imported and ready to use
+3. **Start development mode:**
+   ```bash
+   npm run dev
+   ```
+   This automatically loads the extension in Raycast.
+   
+   **Important:** Keep this terminal window open while using the extension.
 
 4. **Configure API Keys:**
    - Open Raycast

@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { stripQuotes } from "./utils";
 
 export interface ProcessTextOptions {
   text: string;
@@ -21,8 +22,9 @@ export interface PromptTemplate {
 }
 
 const DEFAULT_SYSTEM_PROMPT = `You are a text‑rewriting assistant used inside an automation workflow.
-Always output ONLY the transformed text—without quotation marks or extra explanations, no need to wrap the text in quotes.
-so it can directly replace the user's original selection.
+CRITICAL: Always output ONLY the transformed text—NEVER wrap it in quotation marks, double quotes, or any other delimiters.
+Do NOT add quotes, explanations, or any formatting around the text. Output the pure text only.
+The output will be used to directly replace the user's original selection or display in a modal, so it must be clean text without any wrapping.
 Preserve the original language unless the action is a translation.
 If the original text contains greetings or salutations, keep them; and do NOT add greetings if they were absent.
 Always maintain the topic and meaning.
@@ -36,7 +38,7 @@ const PROMPT_TEMPLATES: Record<string, PromptTemplate> = {
   },
   rewriteInWorkplaceTone: {
     system: DEFAULT_SYSTEM_PROMPT,
-    user: "Rewrite this for a chill Slack chat, use tech/startup abbreviations and keep it simple, like B2 language level and don't add greetings if the original message doesn't have:\n\"{text}\"",
+    user: "Rewrite the text to sound like a natural Slack message between coworkers. Keep it short, clear, and conversational without any greetings. Use startup-style informal English. It’s fine to drop the subject (e.g., “will check” instead of “I will check”) if needed. Use common contractions and abbreviations where it feels right. Avoid overly formal punctuation or complete sentences if they don’t fit the Slack vibe. Keep the original meaning and intent intact. Don’t make it more polite or formal than necessary. Text:\n{text}",
   },
   response_positive: {
     system: DEFAULT_SYSTEM_PROMPT,
@@ -220,7 +222,9 @@ async function sendOpenAIRequest(
 
     const response = await openai.chat.completions.create(requestOptions);
 
-    return response.choices[0]?.message?.content?.trim() || null;
+    const content = response.choices[0]?.message?.content?.trim() || null;
+    // Strip quotes to ensure clean output for replacement/display
+    return content ? stripQuotes(content) : null;
   } catch (error) {
     console.error("OpenAI API error:", error);
     throw new Error(
@@ -267,7 +271,9 @@ async function sendOpenRouterRequest(
     }
 
     const data = await response.json();
-    return data.choices[0]?.message?.content?.trim() || null;
+    const content = data.choices[0]?.message?.content?.trim() || null;
+    // Strip quotes to ensure clean output for replacement/display
+    return content ? stripQuotes(content) : null;
   } catch (error) {
     console.error("OpenRouter API error:", error);
     throw new Error(

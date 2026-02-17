@@ -1,5 +1,25 @@
 import { getSelectedText, showToast, Toast } from "@raycast/api";
 
+/**
+ * Strips leading and trailing quotes (single, double, or smart quotes) from text
+ * This ensures AI responses don't have unwanted quote wrapping
+ */
+export function stripQuotes(text: string): string {
+  if (!text) return text;
+  
+  // Remove leading and trailing whitespace first
+  let cleaned = text.trim();
+  
+  // Remove leading and trailing quotes (single, double, smart quotes)
+  // Match: ", ', ", ', ", ', etc.
+  cleaned = cleaned.replace(/^["'""''«»„‚]+|["'""''«»„‚]+$/g, '');
+  
+  // Also handle cases where quotes might be on separate lines
+  cleaned = cleaned.replace(/^["'""''«»„‚]\s*|\s*["'""''«»„‚]$/g, '');
+  
+  return cleaned.trim();
+}
+
 export async function getTextFromSelectionOrClipboard(): Promise<
   string | null
 > {

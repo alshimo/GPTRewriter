@@ -2,33 +2,34 @@
 
 A powerful AI-powered text rewriting and transformation tool for Raycast, featuring customizable prompts and support for multiple AI providers.
 
-## 🚀 Install in 30 Seconds
+## 🚀 Quick Install
 
-**Copy and paste this command:**
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/alshimo/GPTRewriter.git
+   cd GPTRewriter
+   ```
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/alshimo/GPTRewriter/main/install.sh | bash
-```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+   Or use the setup script: `./setup.sh` (auto-installs Node.js if needed)
 
-Then:
-1. Open Raycast (`Cmd+Space`)
-2. Go to Extensions → Import Extension
-3. Navigate to `~/.raycast-extensions/GPTRewriter`
-4. Configure your API keys in Settings
+3. **Start development mode:**
+   ```bash
+   npm run dev
+   ```
+   This automatically loads the extension in Raycast.
 
-**That's it!** 🎉
+4. **Configure API keys:**
+   - Open Raycast → Type "Settings" (from GPT Rewriter)
+   - Add your OpenAI API Key
+   - Configure your preferred settings
 
-### Manual Installation
+**Note:** Keep `npm run dev` running while using the extension.
 
-If you prefer to install manually:
-
-```bash
-git clone https://github.com/alshimo/GPTRewriter.git
-cd GPTRewriter
-./setup.sh
-```
-
-Then import the folder in Raycast. See [INSTALLATION.md](INSTALLATION.md) for detailed instructions.
+See [INSTALL.md](INSTALL.md) for detailed installation instructions.
 
 ### Configuration
 1. **Open Settings** in the extension
